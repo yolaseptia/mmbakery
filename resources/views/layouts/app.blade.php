@@ -11,10 +11,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- <script src="{{ asset('js/main.js') }}" defer></script> -->
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <style>
         body { 
@@ -74,8 +72,8 @@
     </div>
 </nav>
 
-<!-- Konten Dinamis -->
-<div class="content">
+<!-- Konten Dinamis dengan Efek AOS -->
+<div class="content" data-aos="fade-up">
     @yield('content')
 </div>
 
@@ -83,6 +81,19 @@
 <footer>
     <p>&copy; 2025 MM Bakery. All rights reserved.</p>
 </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS Animation JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000, // Durasi animasi dalam milidetik (1 detik)
+        easing: "ease-in-out", // Efek transisi
+        once: true, // Animasi hanya muncul sekali
+    });
+</script>
 
 </body>
 </html>
