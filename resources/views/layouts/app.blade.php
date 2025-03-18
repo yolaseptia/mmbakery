@@ -26,16 +26,31 @@
             top: 0; 
             z-index: 1000; 
             transition: background 0.3s ease-in-out; 
+            padding: 10px 0;
         }
         .nav-link { 
             color: white !important; 
-            transition: 0.3s; 
+            font-size: 18px; /* Perkecil font */
+            font-weight: bold; /* Tebalkan font */
+            padding: 15px 30px; /* Tambah jarak antar item */
+            position: relative;
+            transition: color 0.3s ease-in-out; 
         }
-        .nav-link:hover { 
+        .nav-link:hover, .nav-link.active { 
             color: #ffeb3b !important; 
         }
+        .nav-link.active::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #ffeb3b;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
         .content { 
-            padding-top: 100px; /* Tambahkan padding agar konten tidak tertutup navbar */
+            padding-top: 120px; /* Tambahkan padding agar konten tidak tertutup navbar */
         }
         footer { 
             background: #c49dd8; 
@@ -47,6 +62,14 @@
         .logo { 
             height: 65px; /* Perbesar logo */
         }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-nav {
+            margin-left: auto; /* Geser menu ke kanan */
+        }
     </style>
 </head>
 <body>
@@ -54,14 +77,14 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
+        <!-- Logo di kiri -->
         <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset('images/carousel/logo.png') }}" class="logo" alt="MM Bakery">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        
+        <!-- Navigasi di kanan -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Beranda</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('produk') }}">Produk</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('tentang') }}">Tentang Kami</a></li>
@@ -69,6 +92,11 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('kontak') }}">Kontak</a></li>
             </ul>
         </div>
+        
+        <!-- Tombol toggle untuk mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
 </nav>
 
@@ -92,6 +120,17 @@
         duration: 1000, // Durasi animasi dalam milidetik (1 detik)
         easing: "ease-in-out", // Efek transisi
         once: true, // Animasi hanya muncul sekali
+    });
+
+    // Tambahkan class 'active' ke link yang sedang aktif
+    document.addEventListener("DOMContentLoaded", function() {
+        let links = document.querySelectorAll(".nav-link");
+        let currentUrl = window.location.href;
+        links.forEach(link => {
+            if (link.href === currentUrl) {
+                link.classList.add("active");
+            }
+        });
     });
 </script>
 
