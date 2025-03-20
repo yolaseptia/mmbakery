@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\PageController' => $baseDir . '/app/Http/Controllers/PageController.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
@@ -1364,6 +1365,7 @@ return array(
     'Illuminate\\Contracts\\Translation\\HasLocalePreference' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Translation/HasLocalePreference.php',
     'Illuminate\\Contracts\\Translation\\Loader' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Translation/Loader.php',
     'Illuminate\\Contracts\\Translation\\Translator' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Translation/Translator.php',
+    'Illuminate\\Contracts\\Validation\\CompilableRules' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Validation/CompilableRules.php',
     'Illuminate\\Contracts\\Validation\\DataAwareRule' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Validation/DataAwareRule.php',
     'Illuminate\\Contracts\\Validation\\Factory' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Validation/Factory.php',
     'Illuminate\\Contracts\\Validation\\ImplicitRule' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Validation/ImplicitRule.php',
