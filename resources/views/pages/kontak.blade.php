@@ -135,6 +135,9 @@
     .header-image-container {
         animation: floating 6s infinite ease-in-out;
     }
+    .ha {
+        color: red
+    }
 </style>
 @endsection
 
