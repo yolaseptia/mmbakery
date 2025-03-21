@@ -15,48 +15,46 @@
 </div>
 
 <!-- Bagian Informasi Kontak -->
-<div class="container text-center py-5">
-    <div class="row justify-content-center mt-4">
+<section class="contact-section">
+    <div class="contact-info">
+        <h2>Hubungi Kami Pada Kontak Informasi Dibawah</h2>
+
+        <!-- Alamat dengan Google Maps -->
+        <div class="icon">
+            <img src="{{ asset('images/carousel/store-buyer.png') }}" alt="Store">
+            <p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Mayor+Jend.+Di+Panjaitan+No.79,+Banjarejo,+Kec.+Taman,+Kota+Madiun,+Jawa+Timur+63137" target="_blank">
+                    Jl. Mayor Jend. Di Panjaitan No.79, Banjarejo, Kec. Taman, Kota Madiun, Jawa Timur 63137
+                </a>
+            </p>
+        </div>
+
+        <!-- Telepon dengan WhatsApp -->
+        <div class="icon">
+            <img src="{{ asset('images/carousel/whatsapp (1).png') }}" alt="Whatsapp">
+            <p>
+                <a href="https://wa.me/6281259176660" target="_blank">+62 812-5917-6660</a>
+            </p>
+        </div>
+
         <!-- Instagram -->
-        <div class="col-md-4">
-            <a href="https://www.instagram.com/mmmadiun1?igsh=bG8yNDA5eW5ocmNy" target="_blank" class="text-decoration-none">
-                <div class="card p-3 shadow contact-card">
-                    <div class="text-center">
-                        <img src="{{ asset('images/carousel/iconIG.png') }}" alt="Instagram" width="70">
-                    </div>
-                    <h5 class="mt-3 font-weight-bold">Instagram MM Bakery</h5>
-                    <p>@mmmadiun1</p>
-                </div>
-            </a>
+        <div class="icon">
+            <img src="{{ asset('images/carousel/instagram (1).png') }}" alt="Instagram">
+            <p>
+                <a href="https://www.instagram.com/mmmadiun1/" target="_blank">@mmmadiun1</a>
+            </p>
         </div>
-        
-        <!-- Nomor Telepon (WhatsApp) -->
-        <div class="col-md-4">
-            <a href="https://wa.me/6281259176660" target="_blank" class="text-decoration-none">
-                <div class="card p-3 shadow contact-card">
-                    <div class="text-center">
-                        <img src="{{ asset('images/carousel/iconWA.png') }}" alt="WhatsApp" width="70">
-                    </div>
-                    <h5 class="mt-3 font-weight-bold">Nomor MM Bakery</h5>
-                    <p>+62 812-5917-6660</p>
-                </div>
-            </a>
-        </div>
-        
+
         <!-- Email -->
-        <div class="col-md-4">
-            <a href="mailto:mmbakery@gmail.com?subject=Pertanyaan%20Tentang%20MM%20Bakery&body=Halo%20MM%20Bakery," class="text-decoration-none">
-                <div class="card p-3 shadow contact-card">
-                    <div class="text-center">
-                        <img src="{{ asset('images/carousel/iconsEmail.png') }}" alt="Email" width="70">
-                    </div>
-                    <h5 class="mt-3 font-weight-bold">Email MM Bakery</h5>
-                    <p>mmbakery@gmail.com</p>
-                </div>
-            </a>
+        <div class="icon">
+            <img src="{{ asset('images/carousel/email.png') }}" alt="Email">
+            <p>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@mmbakerymadiun.com" target="_blank">
+                    @mmbakerymadiun.com</a>
+            </p>
         </div>
     </div>
-</div>
+</section>
 
 <!-- Tambahkan CSS -->
 <style>
@@ -64,7 +62,7 @@
     .header-section {
         position: relative;
         width: 100%;
-        height: 500px; /* Lebih besar */
+        height: 500px;
         overflow: hidden;
     }
 
@@ -93,7 +91,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* Efek transparan gelap */
+        background: rgba(0, 0, 0, 0.5);
     }
 
     .header-text {
@@ -115,17 +113,7 @@
         font-size: 1.3rem;
     }
 
-    /* Efek Hover untuk Kartu Kontak */
-    .contact-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .contact-card:hover {
-        transform: translateY(-30px);
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Animasi agar gambar header sedikit bergerak */
+    /* Animasi header */
     @keyframes floating {
         0% { transform: translateY(0px); }
         50% { transform: translateY(-10px); }
@@ -134,8 +122,120 @@
 
     .header-image-container {
         animation: floating 6s infinite ease-in-out;
-
     }
-</style>
-@endsection
 
+    /* Styling untuk kontak */
+
+    /*untuk whatsaap*/
+    .whatsapp-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #25D366; /* Warna khas WhatsApp */
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    }
+
+    .whatsapp-link:hover {
+    color: #128C7E;
+    }
+
+    .whatsapp-icon {
+    font-size: 40px; /* Ukuran ikon WhatsApp lebih besar */
+    margin-right: 20px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5e6f7;
+    }
+
+    .contact-section {
+        background-color: #d3c1dbbd;
+        padding: 50px;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: rgb(0, 0, 0);
+        border-radius: 20px;
+        max-width: 900px;
+        margin: 50px auto;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-info {
+        width: 60%;
+        text-align: justify;
+    }
+
+    .contact-info h2 {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .contact-info p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .contact-info .icon {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+    }
+
+    .contact-info .icon img {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+    }
+
+    /* Styling untuk link agar lebih menarik */
+    .contact-info a {
+        text-decoration: none;
+        color: #000000;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+        color: #8a2be2;
+    }
+
+    .icon {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak antara ikon dan teks */
+    margin-bottom: 15px; /* Jarak antara setiap baris */
+}
+
+    .icon i {
+    font-size: 35px; /* Ukuran ikon */
+    }
+
+    .icon p {
+    margin: 0; /* Reset margin */
+    font-size: 18px; /* Ukuran teks */
+    }
+
+    /* Untuk layar kecil (mobile) */
+    @media (max-width: 768px) {
+    .icon {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .icon i {
+        font-size: 30px; /* Sedikit lebih kecil di mobile */
+    }
+}
+
+</style>
+
+@endsection
